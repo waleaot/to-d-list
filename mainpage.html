@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd”> 
+<html lang=”EN” dir=”ltr” xmlns=”http://www.w3.org/1999/xhtml”> 
+ <head>   
+ <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<link rel="stylesheet" type="text/css" href="media/media.css">
+	<title>to do mainpage</title>
+
+</head>
+	<body>
+		
+		<header><h1> My Reminder</h1></header>
+  <!-- this is the 'opening' page-->
+
+		<div id="image">
+        <img src="img.jpeg" alt="to do quote" style="width:40%";>
+    </div>
+
+     <div id="button1"> 
+    <button class="btn btn-success" type="submit" onclick="fillme()">Add Task</button>
+    </div>  
+
+   <div id="button2">
+   <button class="btn btn-info" type="submit" onclick="viewtask()"> View task</button>
+    </div> 
+
+
+   <!-- the form to open when the button gets clicked on-->
+
+   <div id="myDIV" class="header">
+  <br>
+
+  subject: <input type="text" id="myInput" class="form-control" placeholder="enter some notes...">
+  <br>
+   <select id="select" class=" container form-group">
+  <option>what to do</option>
+  	<option>Make a call</option>
+    <option>Send a message</option>
+    <option> Set an alarm</option>
+    <option>Send a mail</option>
+    <option>Others</option>
+    <br>
+
+  time: <input type="time" id="time" class="form-control" placeholder="this to do is due when?...">Date: <input type="date" id="date" class="form-control" placeholder="this to do is due when?...">
+  Location <input type="text" id="venue"  class="form-control" placeholder="where..."><br>
+
+  
+ 
+
+ 
+  <span onclick="newElement()" class="addbtn" >Save</span>
+  `<br>
+  <br>
+ <!-- <span onclick="saveTask()" class="addBtn" >Add</span> -->
+  <button onclick="cancell()" class="btn btn-warning" id="canbut" type="submit">Cancel</button>
+ 
+   </div>
+
+   <!-- div containing the to do list-->
+
+   <div id="new">
+<br>
+<table id="maintable">
+  
+    <tr>
+     
+      <th>|subject| </th>
+      <th>| What to do|</th>
+      <th>|time|  </th>
+      <th>|Date|</th>
+      <th>|Location| </th>
+      <tr>
+        
+</table>
+
+
+<ol id="myUL" contenteditable="true">
+  
+  <li>Submit assignment|Others|22-12-2019 | 5:00pm | douglas</li>
+  <li >collect my PVC|Make a call|12-12-2019 | 1:50pm | Owerri </li>
+  <li>Purchase champions league ticket|Others|12-10-2019 | 3:50pm | Obinze</li>
+  <li>Register for green foundation |send Mail|31-04-2019| 7:00am | my phone </li>
+ 
+</ol>
+
+
+<br> 
+<button onclick="cancel()" class="btn btn-success" id="canbut2" type="submit">Okay</button>
+</div>
+
+
+
+
+    <script type="text/javascript">
+
+    	// functions for opening and closing of 'forms'
+
+	function fillme(){
+				document.getElementById("myDIV").style.display="block";
+	}
+
+	 function cancell(){
+	 	 document.getElementById("myDIV").style.display="none";
+	 }
+
+	 function cancel(){
+	 	 document.getElementById("new").style.display="none";
+	 	}
+
+	 function viewtask(){
+	 	document.getElementById("new").style.display="block";
+	 }
+
+
+	 // Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ol');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var input1= document.getElementById("myInput").value;
+  var input2 =  document.getElementById("time").value;
+  var input6 = document.getElementById("date").value;
+  var input3 =  document.getElementById("venue").value;
+ var input4= document.getElementById("select").value;
+//Adds Task
+	// function saveTask() {
+	// 	e.preventDefault();
+	// 	//getting input value
+	// 	var input1= document.getElementById("myInput").value;
+ // 		 var input2 =  document.getElementById("time").value;
+ // 		 var input3 =  document.getElementById("venue").value;
+		
+	// 	console.log(input1,input2,input3);
+
+	// 	//Create a tr element
+	// 	var tr = document.createElement('tr');
+	// 	tr.id = "tabRow";
+		
+	// 			//Create a td element
+	// 	var td = document.createElement('td');
+	// 	//add text node with input value
+	// 	td.appendChild(document.createTextNode(++i));
+	// 	//adding it to the tr 
+	// 	tr.appendChild(td);
+
+	// 	//Create a td element
+	// 	var td1 = document.createElement('td');
+	// 	//add text node with input value
+	// 	td1.appendChild(document.createTextNode(input1));
+	// 	//adding it to the tr 
+	// 	tr.appendChild(td1);
+
+	// 	//Create a td element
+	// 	var td2 = document.createElement('td');
+	// 	//add text node with input value
+	// 	td2.appendChild(document.createTextNode(input2));
+	// 	//adding it to the tr 
+	// 	tr.appendChild(td2);
+
+	// 	//Create a td element
+	// 	var td3 = document.createElement('td');
+	// 	//add text node with input value
+	// 	td3.appendChild(document.createTextNode(input3));
+	// 	//adding it to the tr 
+	// 	tr.appendChild(td3);
+  			
+ //  			var table = document.getElementById('maintable');
+	// 	table.appendChild(tr);
+	
+// var inputValue = table;
+  
+  var inputValue = input1 +  "\t" + "|" + "\t" +  input4 + "\t" + "|" + "\t"+  " "  + input2 + "\t" + "|" + "\t"+  " "+ "\t" + "|" + "\t"+  " " + input6 +  "\t" + "|" + "\t"+  " " + input3;
+
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+    
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My To-do List</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<style>
+		body{
+			background-image: url("images/0.jpg");
+			background-repeat: no-repeat;
+			background-position: top right;
+      bac
+		}
+		
+		
+	</style>
+</head>
+	
+	
+<body id="box">
+<nav>
+		<center><h1 id="l">My To-do List</h1></center>
+</nav>
+
+<main>
+	<div class="container" id="main-container">
+		        <button type="button" class="btn btn-primary" onclick="addTask()">Add Task</button>
+                                <button type="button" class="btn btn-warning"  onclick="viewTask()">View task</button>
+                                <br>                               
+                                    <div class="container" id="form-holder">
+                                        <form id="form">
+                                          <div class="form-group">
+                                                <label for="task"><b>Task</b></label>
+                                                <input type="text" id="task" required>
+                                              </div>
+
+                                              <div class="form-group">
+                                                <label for="patient"><b>Date</b></label>
+                                                <input type="date" id="date" required>
+                                              </div>
+
+                                              <div class="form-group">
+                                                <label for="patient"><b>Time</b></label>
+                                                <input type="time" id="time" required>
+                                              </div>
+
+                                              <div class="form-group">
+                                                <label for="location"><b>Location</b></label>
+                                                <input type="text" id="location" required>
+                                              </div>
+
+                                              <div class="form-group">
+                                                <label for="activity"><b>Activity</b></label>
+                                                <select id="activity">
+												<option>Select Activity</option>
+                                                  <option>Call</option>
+                                                  <option>Set Alarm</option>
+												  <option>Email</option>
+                                                  <option>Send SMS</option>
+                                                </select>
+                                              </div>
+
+                                                <button type="submit" class="btn btn-primary">Save</button>
+                                                <button type="button" class="btn btn-secondary" onclick="discardTask()">Cancel</button>
+                                        </form>
+                                              
+
+                                    </div>      
+                                          <br>    
+
+                                    <!---Table-->
+                                    <div class="container-fluid" id="table">
+                                      <button type="button" class="btn btn-secondary" onclick="closeTable()" style="float: right;">X</button>
+									  <br><caption><b>My List</b></caption>
+                                      <table class="table table-stripped">
+                                          <thead>
+											
+                                            <tr>
+                                              <th>S/N</th>
+                                              <th>Task</th>
+                                              <th>Date</th>
+                                              <th>Time</th>
+                                              <th>Location</th>
+                                              <th>Activity</th>
+                                              <th>Done</th>
+                                            </tr>
+
+                                          </thead>
+                                          <tbody  id="maintable">
+                                            <tr id="tabRow">
+                                              <td>1</td>
+                                              <td>Pray</td>
+                                              <td>20/09/2019</td>
+                                              <td>09:00 AM</td>
+                                              <td>Enugu</td>
+                                              <td>Make Calls</td>
+                                              <td><button class="btn btn-danger delete">Done</button></td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+
+                                        
+
+                                    </div>
+
+
+                                        
+                          
+	</div>
+</main>
+
+<footer>
+ 			<center> OKWUOSA CHUKWUEBUKA &copy; 2019<br>
+ 					Today nearly 1.3 billion people lack access to modern energy and on the other hand, we have technology developing so fast in the energized areas! Energy consumption will grow by 50% till 2050 due to megatrends of rapid urbanization, industrialization and digitization and electricity demand will grow twice as fast as that.
+
+At Schneider, sustainability is at the center of our strategy and we believe that sustainability is business, which means that whatever we do or create, we consider the impact of it in many levels.
+ 			</center>
+ 		</footer>
+
+
+<script src="main.js">
+	
+
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+		</body>
+	</html>
